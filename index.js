@@ -19,13 +19,6 @@ function eventListeners() {
 eventListeners();
 
 
-// get item from storage 
-
-function getDataFromStorage() {
-    return localStorage.getItem("blogs") ? JSON.parse(localStorage.getItem("blogs")) : [];
-}
-
-
 
 // add a new blog in the list 
 
@@ -92,21 +85,6 @@ var counter = 0;
 function increment() {
     counter++;
     console.log(counter);
-}
-
-// display all the blogs from the local storage
-
-function displayBlogs() {
-    let blogs = getDataFromStorage();
-    if (blogs.length > 0) {
-        blogID = blogs[blogs.length - 1].id;
-        blogID++;
-    } else {
-        blogID = 1;
-    }
-    blogs.forEach(item => {
-        createBlog(item);
-    });
 }
 
 
