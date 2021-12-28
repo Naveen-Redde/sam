@@ -24,7 +24,7 @@ function addNewBlog() {
     const blogContent = document.getElementById("blog-content");
 
     if (validateInput(blogTitle, blogImage, blogContent)) {
-//         let blogs = getDataFromStorage();
+        let blogs = getDataFromStorage();
 
         let blogItem = new Blog(blogID, blogTitle.value, blogImage.value, blogContent.value);
         blogID++;
@@ -79,7 +79,7 @@ function deleteBlog(e) {
     if (e.target.classList.contains("delete-blog-btn")) {
 
         e.target.parentElement.remove();
-//         let divID = e.target.parentElement.dataset.id;
+        let divID = e.target.parentElement.dataset.id;
         let blogs = getDataFromStorage();
         let newBlogsList = blogs.filter(item => {
             return item.id !== parseInt(divID);
