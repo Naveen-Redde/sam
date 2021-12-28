@@ -8,7 +8,6 @@ function Blog(id, title, image, content) {
 }
 
 // Add eventListeners 
-
 function eventListeners() {
     document.addEventListener("DOMContentLoaded", displayBlogs);
     document.getElementById("add-blog-btn").addEventListener("click", addNewBlog);
@@ -18,10 +17,7 @@ function eventListeners() {
 }
 eventListeners();
 
-
-
 // add a new blog in the list 
-
 function addNewBlog() {
     const blogTitle = document.getElementById("blog-title");
     const blogImage = document.getElementById("blog-image");
@@ -41,16 +37,10 @@ function addNewBlog() {
         blogTitle.value = "";
         blogImage.value = "";
         blogContent.value = "";
-
-
     }
-
 }
 
-
-
 //  input validation 
-
 function validateInput(title, image, content) {
     if (title.value !== "" && image.value !== "" && content.value !== "") {
         return true;
@@ -61,9 +51,7 @@ function validateInput(title, image, content) {
     }
 }
 
-
 // create a new blog div
-
 function createBlog(blogItem) {
     const div = document.createElement("div");
     div.classList.add("blog-item");
@@ -80,13 +68,11 @@ function createBlog(blogItem) {
   `;
     blogListDiv.appendChild(div);
 }
-
 var counter = 0;
 function increment() {
     counter++;
     console.log(counter);
 }
-
 
 // delete a blog
 function deleteBlog(e) {
